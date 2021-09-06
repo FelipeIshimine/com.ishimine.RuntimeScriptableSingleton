@@ -1,0 +1,18 @@
+{
+    "name": "com.Ishimine.RuntimeScriptableSingleton.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0653f5627b2600a4eb22a89911ae7632"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
