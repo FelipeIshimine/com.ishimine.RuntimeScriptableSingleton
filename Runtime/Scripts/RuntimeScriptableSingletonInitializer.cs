@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using Object = UnityEngine.Object;
 #if UNITY_EDITOR
@@ -68,7 +69,7 @@ public class RuntimeScriptableSingletonInitializer : ScriptableObject
     
     public static void GetOrInstantiateAllInstances()
     {
-        var types = UnityExtentions.GetAllSubclassTypes<BaseRuntimeScriptableSingleton>();
+        var types = GetAllSubclassTypes<BaseRuntimeScriptableSingleton>();
         foreach (Type item in types)
         {
             Object uObject = null;
@@ -99,7 +100,13 @@ public class RuntimeScriptableSingletonInitializer : ScriptableObject
         AssetDatabase.SaveAssets();
     }
     
-    
+    public static IEnumerable<Type> GetAllSubclassTypes<T>() 
+    {
+        return from assembly in AppDomain.CurrentDomain.GetAssemblies()
+            from type in assembly.GetTypes()
+            where (type.IsSubclassOf(typeof(T)) && !type.IsAbstract)
+            select type;
+    }
     
     public static List<Object> FindAssetsByType(Type type)
     {
