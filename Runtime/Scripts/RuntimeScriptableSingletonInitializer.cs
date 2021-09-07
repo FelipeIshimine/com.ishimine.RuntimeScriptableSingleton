@@ -167,5 +167,9 @@ public class RuntimeScriptableSingletonInitializer : ScriptableObject
 
     private static int RuntimeScriptableSingletonSorter(BaseRuntimeScriptableSingleton x, BaseRuntimeScriptableSingleton y) => x.InitializationPriority.CompareTo(y.InitializationPriority);
 
-   
+    public static void PreBuildProcess()
+    {
+        foreach (BaseRuntimeScriptableSingleton baseRuntimeScriptableSingleton in Instance.elements)
+            baseRuntimeScriptableSingleton.PreBuildProcess();
+    }
 }

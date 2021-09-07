@@ -19,6 +19,7 @@ public class RuntimeScriptableSingletonBuildValidator  : IPreprocessBuildWithRep
         {
             RuntimeScriptableSingletonInitializer.Clear();
             RuntimeScriptableSingletonInitializer.Initialize();
+            RuntimeScriptableSingletonInitializer.PreBuildProcess();
         }
         catch (System.Exception e) //Relanzamos el error
         {
