@@ -11,7 +11,7 @@ using UnityEngine;
 
 public class RuntimeScriptableSingletonBuildValidator  : IPreprocessBuildWithReport
 {
-    public int callbackOrder => 0;
+    public int callbackOrder => 1;
 
     public void OnPreprocessBuild(BuildReport report)
     {
