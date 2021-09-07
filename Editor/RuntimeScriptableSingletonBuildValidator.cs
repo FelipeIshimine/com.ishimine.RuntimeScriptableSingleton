@@ -1,13 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
-using UnityEngine;
 
 public class RuntimeScriptableSingletonBuildValidator  : IPreprocessBuildWithReport
 {
